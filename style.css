@@ -1,0 +1,296 @@
+:root {
+    --primary-color: #7b1c1c;
+    --primary-dark: #5c1212;
+    --primary-light: #f8e8e8;
+    --secondary-color: #f9f9f9;
+    --text-color: #333;
+    --light-gray: #f0f0f0;
+    --medium-gray: #aaa;
+    --dark-gray: #555;
+    --success-green: #28a745;
+    --error-red: #dc3545;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.college-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+.subheading {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+#searchInput {
+    width: 70%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(123, 28, 28, 0.1);
+}
+
+button {
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+#result {
+    margin-top: 30px;
+}
+
+.student-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.hall-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    color: var(--primary-color);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.seat-grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.seat {
+    border: 1px solid var(--medium-gray);
+    padding: 15px 5px;
+    text-align: center;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.student-seat {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(123, 28, 28, 0.3);
+    z-index: 2;
+}
+
+.empty-seat {
+    background-color: var(--light-gray);
+    color: var(--medium-gray);
+}
+
+.entrance-marker {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.entrance-marker::after {
+    content: "Entrance";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--success-green);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.not-found {
+    color: var(--error-red);
+    text-align: center;
+    padding: 30px;
+    font-size: 1.1rem;
+    background-color: #fff5f5;
+    border-radius: 8px;
+    border-left: 4px solid var(--error-red);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+
+#entrance-info-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.door-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 15px;
+        padding: 20px;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+    
+    #searchInput, button {
+        width: 100%;
+    }
+
+    .student-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.student-seat {
+    animation: pulse 1.5s infinite;
+}
+
+/* Style for entrance container */
+.entrance-container {
+    display: flex;
+    align-items: center;
+    margin-left: 0; /* Align entrance to the left */
+    padding-left: 10px; /* Space between icon and grid */
+}
+
+.door-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.entrance-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Position the entrance info left of the grid */
+#entrance-info-container {
+    color:black;
+    display: block;
+    top: 20px;
+    left: 10px; /* Ensure it's positioned to the left */
+    z-index: 10;
+}
